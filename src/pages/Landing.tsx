@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import type { MouseEvent as ReactMouseEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../lib/auth'
+import { Link } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+// import { useAuth } from '../lib/auth'
 import Logo from '../components/Logo'
 import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
@@ -69,10 +70,10 @@ const MARQUEE_CHIPS = [
 ]
 
 export default function Landing() {
-  const navigate = useNavigate()
-  const { demoLogin } = useAuth()
-  const [demoLoading, setDemoLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  // const navigate = useNavigate()
+  // const { demoLogin } = useAuth()
+  // const [demoLoading, setDemoLoading] = useState(false)
+  // const [error, setError] = useState<string | null>(null)
   const [scrollPct, setScrollPct] = useState(0)
   const heroVisualRef = useRef<HTMLDivElement | null>(null)
   const heroScrubRef = useRef<HTMLDivElement | null>(null)
@@ -139,17 +140,17 @@ export default function Landing() {
     el.style.setProperty('--tilt-y', '0deg')
   }
 
-  async function handleDemo() {
-    setError(null)
-    setDemoLoading(true)
-    try {
-      await demoLogin()
-      navigate('/dashboard')
-    } catch (e) {
-      setError(e instanceof Error ? e.message : '체험 모드 접속에 실패했습니다. 잠시 후 다시 시도해주세요.')
-      setDemoLoading(false)
-    }
-  }
+  // async function handleDemo() {
+  //   setError(null)
+  //   setDemoLoading(true)
+  //   try {
+  //     await demoLogin()
+  //     navigate('/dashboard')
+  //   } catch (e) {
+  //     setError(e instanceof Error ? e.message : '체험 모드 접속에 실패했습니다. 잠시 후 다시 시도해주세요.')
+  //     setDemoLoading(false)
+  //   }
+  // }
 
   return (
     <div className="landing">
@@ -167,9 +168,9 @@ export default function Landing() {
           <Link to="/login" className="btn btn-ghost">
             로그인
           </Link>
-          <button className="btn btn-primary" onClick={handleDemo} disabled={demoLoading}>
-            {demoLoading ? '접속 중…' : '체험하기'}
-          </button>
+          <a href="#waitlist" className="btn btn-primary">
+            사전 신청하기
+          </a>
         </div>
       </header>
 
@@ -217,18 +218,14 @@ export default function Landing() {
               딱콕이 제품 성분을 아이별 건강 프로필과 대조해 바로 알려드릴게요.
             </p>
             <div className="hero-actions">
-              <button className="btn btn-primary hero-cta" onClick={handleDemo} disabled={demoLoading}>
-                {demoLoading ? '접속 중…' : '로그인 없이 체험하기'}
+              <a href="#waitlist" className="btn btn-primary hero-cta">
+                출시 알림 신청하기
                 <IconArrowRight />
-              </button>
+              </a>
               <Link to="/login" className="btn btn-ghost hero-cta">
                 교사 계정 로그인
               </Link>
             </div>
-            <a href="#waitlist" className="hero-waitlink">
-              아직 베타 기간이에요 · <strong>정식 출시 알림 신청하기 →</strong>
-            </a>
-            {error && <div className="error-banner">{error}</div>}
           </div>
 
           <div
@@ -402,12 +399,12 @@ export default function Landing() {
         <Reveal>
           <div className="cta-inner">
             <div className="cta-glow" aria-hidden />
-            <h2>지금 바로 체험해보세요</h2>
-            <p>회원가입 없이 클릭 한 번이면 데모 시설의 대시보드를 둘러볼 수 있어요.</p>
-            <button className="btn cta-btn" onClick={handleDemo} disabled={demoLoading}>
-              {demoLoading ? '접속 중…' : '체험하기'}
+            <h2>출시 소식, 가장 먼저 받아보세요</h2>
+            <p>이메일을 남겨주시면 정식 출시 전 가장 먼저 알려드릴게요.</p>
+            <a href="#waitlist" className="btn cta-btn">
+              알림 신청하기
               <IconArrowRight />
-            </button>
+            </a>
           </div>
         </Reveal>
       </section>
