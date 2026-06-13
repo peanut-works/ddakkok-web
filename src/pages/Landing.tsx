@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { MouseEvent as ReactMouseEvent } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import { useNavigate } from 'react-router-dom'
 // import { useAuth } from '../lib/auth'
 import Logo from '../components/Logo'
@@ -162,9 +162,6 @@ export default function Landing() {
           <a href="#waitlist">출시 알림</a>
         </nav>
         <div className="landing-header-actions">
-          <Link to="/login" className="btn btn-ghost">
-            로그인
-          </Link>
           <a href="#waitlist" className="btn btn-primary">
             사전 신청하기
           </a>
@@ -218,9 +215,6 @@ export default function Landing() {
                 출시 알림 신청하기
                 <IconArrowRight />
               </a>
-              <Link to="/login" className="btn btn-ghost hero-cta">
-                교사 계정 로그인
-              </Link>
             </div>
           </div>
 
