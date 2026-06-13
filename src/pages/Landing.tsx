@@ -7,7 +7,6 @@ import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
 import AssetImage from '../components/AssetImage'
 import PhoneStory from '../components/PhoneStory'
-import ScrollScrubVideo from '../components/ScrollScrubVideo'
 import Waitlist from '../components/Waitlist'
 import {
   IconArrowRight,
@@ -76,6 +75,8 @@ export default function Landing() {
   const [error, setError] = useState<string | null>(null)
   const [scrollPct, setScrollPct] = useState(0)
   const heroVisualRef = useRef<HTMLDivElement | null>(null)
+  const heroScrubRef = useRef<HTMLDivElement | null>(null)
+  const heroBgVideoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -85,6 +86,40 @@ export default function Landing() {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const video = heroBgVideoRef.current
+    const wrap = heroScrubRef.current
+    if (!video || !wrap) return
+
+    let target = 0
+    let raf = 0
+
+    const onScroll = () => {
+      const rect = wrap.getBoundingClientRect()
+      const total = wrap.offsetHeight - window.innerHeight
+      if (total <= 0) return
+      target = Math.min(1, Math.max(0, -rect.top / total))
+    }
+
+    const tick = () => {
+      if (video.duration > 0 && video.readyState >= 2) {
+        const want = target * video.duration
+        const cur = video.currentTime
+        const next = cur + (want - cur) * 0.22
+        if (Math.abs(want - cur) > 0.004) video.currentTime = next
+      }
+      raf = requestAnimationFrame(tick)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    raf = requestAnimationFrame(tick)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(raf)
+    }
   }, [])
 
   function handleTilt(e: ReactMouseEvent<HTMLDivElement>) {
@@ -139,7 +174,17 @@ export default function Landing() {
       </header>
 
       {/* ───────── HERO ───────── */}
+      <div className="hero-scrub-wrap" ref={heroScrubRef}>
       <section className="hero">
+        <video
+          ref={heroBgVideoRef}
+          className="hero-bg-video"
+          src="/scrub.mp4"
+          muted
+          playsInline
+          preload="auto"
+        />
+        <div className="hero-video-overlay" aria-hidden />
         <div className="hero-mesh" aria-hidden />
         <div className="hero-blob hero-blob-1" />
         <div className="hero-blob hero-blob-2" />
@@ -231,6 +276,7 @@ export default function Landing() {
           스크롤해서 딱콕 살펴보기
         </div>
       </section>
+      </div>
 
       {/* ───────── 성분 마퀴 ───────── */}
       <div className="marquee" aria-hidden>
@@ -250,13 +296,6 @@ export default function Landing() {
 
       {/* ───────── 스크롤 스토리 (sticky phone) ───────── */}
       <PhoneStory />
-
-      {/* ───────── 스크롤 스크럽 영상 슬롯 ───────── */}
-      <ScrollScrubVideo
-        src="scrub.mp4"
-        title="실제 시연 영상"
-        sub="스크롤을 내리면 재생되고, 올리면 되감겨요."
-      />
 
       {/* ───────── 숫자 스탯 ───────── */}
       <section className="stats">
