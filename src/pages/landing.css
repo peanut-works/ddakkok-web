@@ -94,14 +94,8 @@ html {
 }
 
 /* ---------- hero ---------- */
-.hero-scrub-wrap {
-  height: 260vh;
-  position: relative;
-}
-
 .hero {
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 82vh;
   padding: 72px 6vw 60px;
   background: transparent;

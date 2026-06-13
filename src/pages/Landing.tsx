@@ -91,17 +91,14 @@ export default function Landing() {
 
   useEffect(() => {
     const video = heroBgVideoRef.current
-    const wrap = heroScrubRef.current
-    if (!video || !wrap) return
+    if (!video) return
 
     let target = 0
     let raf = 0
 
     const onScroll = () => {
-      const rect = wrap.getBoundingClientRect()
-      const total = wrap.offsetHeight - window.innerHeight
-      if (total <= 0) return
-      target = Math.min(1, Math.max(0, -rect.top / total))
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      target = max > 0 ? Math.min(1, window.scrollY / max) : 0
     }
 
     const tick = () => {
@@ -175,7 +172,6 @@ export default function Landing() {
       </header>
 
       {/* ───────── HERO ───────── */}
-      <div className="hero-scrub-wrap" ref={heroScrubRef}>
       <section className="hero">
         <video
           ref={heroBgVideoRef}
@@ -273,7 +269,6 @@ export default function Landing() {
           스크롤해서 딱콕 살펴보기
         </div>
       </section>
-      </div>
 
       {/* ───────── 성분 마퀴 ───────── */}
       <div className="marquee" aria-hidden>
