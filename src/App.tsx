@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-// import { AuthProvider } from './lib/auth'
+import { AuthProvider } from './lib/auth'
 // import DashboardLayout from './layouts/DashboardLayout'
 import Landing from './pages/Landing'
 // import Login from './pages/Login'
@@ -11,7 +11,7 @@ import Landing from './pages/Landing'
 
 export default function App() {
   return (
-    // <AuthProvider>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -26,6 +26,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
-    // </AuthProvider>
+    </AuthProvider>
   )
 }
