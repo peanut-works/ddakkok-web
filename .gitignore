@@ -9,3 +9,5 @@ dist
 
 # 검증용 스크린샷 임시 폴더
 shots
+src/app/
+src/imports/
