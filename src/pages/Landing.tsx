@@ -291,54 +291,66 @@ export default function Landing() {
         <div className="marquee-caption">딱콕이 매일 대조하는 성분들이에요</div>
       </div>
 
+      {/* ───────── 현장 사진 + 목소리 ───────── */}
+      <section className=”voices” id=”voices”>
+        <Reveal>
+          <h2 className=”landing-section-title”>
+            보육 현장의 <em>진짜 이야기</em>
+          </h2>
+          <p className=”landing-section-sub”>아이들 곁에서 매일 제품을 고르는 선생님들을 위해 만들었어요.</p>
+        </Reveal>
+        <div className=”voices-grid”>
+          <Reveal delay={0}>
+            <figure className=”voice-card card”>
+              <AssetImage
+                name=”teacher.jpg”
+                alt=”딱콕으로 제품을 검사하는 보육교사”
+                label=”교사 사용 장면 사진”
+                ratio=”4 / 3”
+              />
+              <figcaption>
+                <blockquote>
+                  “물티슈 하나 바꿀 때마다 아이들 알레르기 수첩을 뒤졌는데, 이제는 촬영 한 번이면 끝나요.”
+                </blockquote>
+                <span className=”voice-author”>— 7년차 보육교사</span>
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal delay={120}>
+            <figure className=”voice-card card”>
+              <AssetImage
+                name=”kids.jpg”
+                alt=”어린이집에서 활동 중인 아이들”
+                label=”아이들 활동 사진”
+                ratio=”4 / 3”
+              />
+              <figcaption>
+                <blockquote>
+                  “알레르기가 있는 아이 부모님께 ‘검사 기록’을 그대로 보여드리니 신뢰가 달라졌어요.”
+                </blockquote>
+                <span className=”voice-author”>— 어린이집 원장</span>
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ───────── 스크롤 스토리 (sticky phone) ───────── */}
       <PhoneStory />
 
-      {/* ───────── 숫자 스탯 ───────── */}
-      <section className="stats">
-        <Reveal>
-          <div className="stats-grid">
-            <div className="stat">
-              <strong>
-                <CountUp end={1200} suffix="+" />
-              </strong>
-              <span>대조 가능 성분 데이터</span>
-            </div>
-            <div className="stat">
-              <strong>
-                <CountUp end={3} suffix="초" />
-              </strong>
-              <span>평균 안전 판정 시간</span>
-            </div>
-            <div className="stat">
-              <strong>
-                <CountUp end={365} suffix="일" />
-              </strong>
-              <span>회수·리콜 정보 모니터링</span>
-            </div>
-            <div className="stat">
-              <strong>
-                <CountUp end={100} suffix="%" />
-              </strong>
-              <span>검사 기록 자동 보관</span>
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* ───────── 기능 ───────── */}
-      <section className="features" id="features">
+      <section className=”features” id=”features”>
         <Reveal>
-          <h2 className="landing-section-title">
+          <h2 className=”landing-section-title”>
             선생님의 하루를 지키는 <em>여섯 가지 방법</em>
           </h2>
-          <p className="landing-section-sub">바쁜 보육 현장에서도 제품 안전 확인은 놓칠 수 없으니까요.</p>
+          <p className=”landing-section-sub”>바쁜 보육 현장에서도 제품 안전 확인은 놓칠 수 없으니까요.</p>
         </Reveal>
-        <div className="features-grid">
+        <div className=”features-grid”>
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={i * 80}>
-              <div className="feature-card card">
-                <span className="feature-icon">{f.icon}</span>
+              <div className=”feature-card card”>
+                <span className=”feature-icon”>{f.icon}</span>
                 <h3>{f.title}</h3>
                 <p>{f.desc}</p>
               </div>
@@ -347,67 +359,47 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ───────── 현장 사진 + 목소리 ───────── */}
-      <section className="voices" id="voices">
-        <Reveal>
-          <h2 className="landing-section-title">
-            보육 현장의 <em>진짜 이야기</em>
-          </h2>
-          <p className="landing-section-sub">아이들 곁에서 매일 제품을 고르는 선생님들을 위해 만들었어요.</p>
-        </Reveal>
-        <div className="voices-grid">
-          <Reveal delay={0}>
-            <figure className="voice-card card">
-              <AssetImage
-                name="teacher.jpg"
-                alt="딱콕으로 제품을 검사하는 보육교사"
-                label="교사 사용 장면 사진"
-                ratio="4 / 3"
-              />
-              <figcaption>
-                <blockquote>
-                  “물티슈 하나 바꿀 때마다 아이들 알레르기 수첩을 뒤졌는데, 이제는 촬영 한 번이면 끝나요.”
-                </blockquote>
-                <span className="voice-author">— 7년차 보육교사</span>
-              </figcaption>
-            </figure>
-          </Reveal>
-          <Reveal delay={120}>
-            <figure className="voice-card card">
-              <AssetImage
-                name="kids.jpg"
-                alt="어린이집에서 활동 중인 아이들"
-                label="아이들 활동 사진"
-                ratio="4 / 3"
-              />
-              <figcaption>
-                <blockquote>
-                  “알레르기가 있는 아이 부모님께 ‘검사 기록’을 그대로 보여드리니 신뢰가 달라졌어요.”
-                </blockquote>
-                <span className="voice-author">— 어린이집 원장</span>
-              </figcaption>
-            </figure>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ───────── 출시 알림 신청 ───────── */}
       <Waitlist />
 
-      {/* ───────── CTA ───────── */}
-      <section className="cta-banner">
+      {/* ───────── 숫자 스탯 (주석 처리) ───────── */}
+      {/* <section className=”stats”>
         <Reveal>
-          <div className="cta-inner">
-            <div className="cta-glow" aria-hidden />
+          <div className=”stats-grid”>
+            <div className=”stat”>
+              <strong><CountUp end={1200} suffix=”+” /></strong>
+              <span>대조 가능 성분 데이터</span>
+            </div>
+            <div className=”stat”>
+              <strong><CountUp end={3} suffix=”초” /></strong>
+              <span>평균 안전 판정 시간</span>
+            </div>
+            <div className=”stat”>
+              <strong><CountUp end={365} suffix=”일” /></strong>
+              <span>회수·리콜 정보 모니터링</span>
+            </div>
+            <div className=”stat”>
+              <strong><CountUp end={100} suffix=”%” /></strong>
+              <span>검사 기록 자동 보관</span>
+            </div>
+          </div>
+        </Reveal>
+      </section> */}
+
+      {/* ───────── CTA (제거) ───────── */}
+      {/* <section className=”cta-banner”>
+        <Reveal>
+          <div className=”cta-inner”>
+            <div className=”cta-glow” aria-hidden />
             <h2>출시 소식, 가장 먼저 받아보세요</h2>
             <p>이메일을 남겨주시면 정식 출시 전 가장 먼저 알려드릴게요.</p>
-            <a href="#waitlist" className="btn cta-btn">
+            <a href=”#waitlist” className=”btn cta-btn”>
               알림 신청하기
               <IconArrowRight />
             </a>
           </div>
         </Reveal>
-      </section>
+      </section> */}
 
       <footer className="landing-footer">
         <Logo size={26} textColor="var(--muted)" />
