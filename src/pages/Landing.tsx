@@ -186,7 +186,7 @@ export default function Landing() {
           preload="auto"
         />
         <div className="hero-video-overlay" aria-hidden />
-        <div className="hero-mesh" aria-hidden />
+        {/* <div className="hero-mesh" aria-hidden /> */}
         <div className="hero-blob hero-blob-1" />
         <div className="hero-blob hero-blob-2" />
         <div className="hero-blob hero-blob-3" />
