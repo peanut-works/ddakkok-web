@@ -86,9 +86,6 @@ export default function Waitlist() {
                   <span style={{ background: 'linear-gradient(135deg,#7FD8A8,#2BA86A)' }}>박</span>
                   <span style={{ background: 'linear-gradient(135deg,#C2A8F5,#8B5CF6)' }}>최</span>
                 </div>
-                <span className="waitlist-count">
-                  이미 <strong>{count.toLocaleString()}</strong>명의 선생님이 기다리고 있어요
-                </span>
               </div>
 
               <p className="waitlist-privacy">🔒 출시 알림 외 다른 용도로 사용하지 않고, 광고를 보내지 않아요.</p>
