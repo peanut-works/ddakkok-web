@@ -13,7 +13,7 @@ const ENDPOINT = import.meta.env.VITE_WAITLIST_URL ?? 'https://api.web3forms.com
 const ACCESS_KEY = import.meta.env.VITE_WAITLIST_KEY ?? ''
 
 // 사회적 증거용 베이스 카운트 (데모에서 "이미 N명 신청" 느낌)
-const BASE_COUNT = 1247
+const BASE_COUNT = 84
 
 interface Store {
   emails: string[]
