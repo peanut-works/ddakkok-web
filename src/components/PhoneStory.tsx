@@ -145,7 +145,7 @@ export default function PhoneStory() {
             </div>
 
             <div className={`story-float sf-1${phase === 1 ? ' show' : ''}`}>🔍 성분 5개 추출 완료</div>
-            <div className={`story-float sf-2${phase === 2 ? ' show' : ''}`}>⚡ 판정까지 2.4초</div>
+            <div className={`story-float sf-2${phase === 2 ? ' show' : ''}`}>⚡ 판정까지 5초</div>
           </div>
         </div>
       </div>
