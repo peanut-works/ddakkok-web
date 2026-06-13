@@ -1,0 +1,11 @@
+node_modules
+dist
+*.log
+
+# 로컬 환경값/비밀값은 커밋하지 않음 (.env.example, .env.production 은 추적)
+.env
+.env.local
+.env.*.local
+
+# 검증용 스크린샷 임시 폴더
+shots

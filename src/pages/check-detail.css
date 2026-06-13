@@ -1,0 +1,158 @@
+.ckd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 26px 28px;
+  margin-bottom: 18px;
+}
+
+.ckd-head-main h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.4px;
+}
+
+.ckd-meta {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.ckd-overview {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+  align-items: stretch;
+}
+
+.ckd-donut-card {
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ckd-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 720px) {
+  .ckd-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ckd-stat {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ckd-stat strong {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.ckd-stat span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat-pass {
+  color: var(--primary-dark);
+}
+
+.stat-warn {
+  color: #c79b00;
+}
+
+.stat-fail {
+  color: var(--danger);
+}
+
+.ckd-explanation,
+.ckd-ingredients {
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+
+.ckd-explanation p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--body);
+  white-space: pre-line;
+}
+
+.ckd-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 16px;
+}
+
+.ckd-result {
+  padding: 20px 22px;
+}
+
+.result-FAIL {
+  border-left: 4px solid var(--danger);
+}
+
+.result-WARN {
+  border-left: 4px solid var(--yellow);
+}
+
+.result-PASS {
+  border-left: 4px solid var(--primary-mid);
+}
+
+.ckd-result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ckd-child-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.ckd-child-name:hover {
+  color: var(--primary);
+}
+
+.ckd-sentence {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--body);
+}
+
+.ckd-matched {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.ckd-reason {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ckd-ai {
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  color: var(--primary-dark);
+  background: var(--primary-light);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}

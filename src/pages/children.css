@@ -1,0 +1,174 @@
+.children-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.classroom-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.classroom-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 17px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  background: var(--surface);
+  border: 1.5px solid var(--hairline);
+  color: var(--body);
+  transition: all 0.18s ease;
+}
+
+.classroom-tab:hover {
+  border-color: var(--primary-mid);
+}
+
+.classroom-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(42, 102, 247, 0.3);
+}
+
+.classroom-age {
+  font-size: 11.5px;
+  opacity: 0.75;
+}
+
+/* 반 통계 */
+.children-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.cstat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 8px 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.cstat strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.cstat-danger strong {
+  color: var(--danger);
+}
+
+.cstat-yellow strong {
+  color: #c79b00;
+}
+
+.cstat span {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* 카드 그리드 */
+.children-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+.child-card {
+  display: block;
+  padding: 16px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.child-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-pop);
+  border-color: var(--primary-mid);
+}
+
+.child-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.child-avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(26, 29, 35, 0.16);
+}
+
+.child-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.child-info h3 {
+  margin: 0;
+  font-size: 15.5px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.local-tag {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--yellow-light);
+  color: #8a6d00;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.child-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.child-arrow {
+  font-size: 20px;
+  color: var(--muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.child-card:hover .child-arrow {
+  transform: translateX(3px);
+  color: var(--primary);
+}
+
+.child-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  min-height: 26px;
+}
+
+.child-chips .chip {
+  font-size: 11.5px;
+  padding: 4px 10px;
+}

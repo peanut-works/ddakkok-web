@@ -1,0 +1,80 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(600px 400px at 15% 10%, var(--primary-light) 0%, transparent 70%),
+    radial-gradient(500px 360px at 90% 90%, var(--yellow-light) 0%, transparent 70%),
+    var(--canvas);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 36px;
+  border-radius: var(--radius-lg);
+  animation: riseIn 0.45s ease both;
+}
+
+.login-logo {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+
+.login-card h1 {
+  font-size: 23px;
+  margin: 0 0 6px;
+  letter-spacing: -0.4px;
+}
+
+.login-sub {
+  color: var(--muted);
+  font-size: 14.5px;
+  margin: 0 0 26px;
+}
+
+.login-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 15.5px;
+  margin-top: 4px;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+
+.login-demo {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.login-hint {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 20px 0 0;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}

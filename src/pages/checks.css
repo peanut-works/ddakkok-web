@@ -1,0 +1,155 @@
+.check-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 0 18px;
+}
+
+.filter-count {
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.07);
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+.classroom-tab.active .filter-count {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.check-ratio {
+  display: flex;
+  height: 7px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--surface-soft);
+  margin: 9px 0 8px;
+  max-width: 420px;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.check-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.check-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pop);
+}
+
+.check-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: var(--surface-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.check-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.check-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.check-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.check-counts {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 9px 0;
+}
+
+.count-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.pill-pass {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.pill-warn {
+  background: var(--yellow-light);
+  color: #8a6d00;
+}
+
+.pill-fail {
+  background: var(--danger-light);
+  color: #d43c3c;
+}
+
+.pill-etc {
+  background: var(--surface-soft);
+  color: var(--muted);
+}
+
+.check-total {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.check-children {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.check-time {
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* 판정 비율 바 조각 (대시보드와 공유되는 클래스지만 독립 정의) */
+.rb {
+  height: 100%;
+}
+
+.rb-pass {
+  background: var(--primary);
+}
+
+.rb-warn {
+  background: var(--yellow);
+}
+
+.rb-fail {
+  background: var(--danger);
+}
+
+.rb-etc {
+  background: #b8bdc7;
+}
+
+@media (max-width: 640px) {
+  .check-card {
+    flex-direction: column;
+  }
+}
