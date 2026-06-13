@@ -5,7 +5,7 @@ import type { MouseEvent as ReactMouseEvent } from 'react'
 // import { useAuth } from '../lib/auth'
 import Logo from '../components/Logo'
 import Reveal from '../components/Reveal'
-import CountUp from '../components/CountUp'
+// import CountUp from '../components/CountUp'
 import AssetImage from '../components/AssetImage'
 import PhoneStory from '../components/PhoneStory'
 import Waitlist from '../components/Waitlist'
@@ -76,7 +76,7 @@ export default function Landing() {
   // const [error, setError] = useState<string | null>(null)
   const [scrollPct, setScrollPct] = useState(0)
   const heroVisualRef = useRef<HTMLDivElement | null>(null)
-  const heroScrubRef = useRef<HTMLDivElement | null>(null)
+  // const heroScrubRef = useRef<HTMLDivElement | null>(null)
   const heroBgVideoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
