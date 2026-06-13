@@ -180,7 +180,7 @@ export default function Landing() {
         <video
           ref={heroBgVideoRef}
           className="hero-bg-video"
-          src="/scrub.mp4"
+          src="/assets/scrub.mp4"
           muted
           playsInline
           preload="auto"
